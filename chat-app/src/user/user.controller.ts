@@ -5,13 +5,10 @@ import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
-    /**
-     *
-     */
 
     @Inject()
     userService: UserService;
-    
+
     @Post()
     async createUser(@Body() user: PubUser) {
         try {

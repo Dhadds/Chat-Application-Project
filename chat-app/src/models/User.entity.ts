@@ -24,17 +24,16 @@ export class User {
 
 export class PubUser implements Omit<User, 'id'> {
     @ApiProperty()
-    @Column({ unique: true })
     email: string;
 
     @ApiProperty()
-    @Column()
     firstName: string;
 
     @ApiProperty()
-    @Column()
     lastName: string;
 
-    @Column({ default: true })
+    @ApiProperty()
+    password: string;
+
     isActive: boolean;
 }
