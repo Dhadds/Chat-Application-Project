@@ -1,0 +1,20 @@
+{
+  "name": "Chat-Application-Project",
+  "version": "1.0.0",
+  "description": "## Steps for the project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhadds/Chat-Application-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhadds/Chat-Application-Project/issues"
+  },
+  "homepage": "https://github.com/Dhadds/Chat-Application-Project#readme"
+}
