@@ -1,9 +1,20 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { MySqlConfig } from 'config/MysqlConfig';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      ...MySqlConfig,
+      synchronize: true,
+      entities: ["dist/**/*.entity{.ts,.js}"],
+    }),
+    UserModule    
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
