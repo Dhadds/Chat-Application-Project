@@ -8,6 +8,8 @@ import {
 import LoginRoute from './routes/LoginRoute/LoginRoute';
 import CreateAccountRoute from './routes/CreateAccountRoute/CreateAccountRoute';
 import MainRoute from './routes/MainRoute/MainRoute';
+import Toast from './components/Feedback/Toast';
+import SubmissionBackdrop from './components/Feedback/SubmissionBackdrop';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           exact
         />
       </Switch>
+      <Toast />
+      <SubmissionBackdrop />
     </BrowserRouter>
   );
 }

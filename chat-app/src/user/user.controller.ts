@@ -9,7 +9,7 @@ export class UserController {
     @Inject()
     userService: UserService;
 
-    @Post()
+    @Post("/create")
     async createUser(@Body() user: PubUser) {
         try {
             await this.userService.createUser(user);
