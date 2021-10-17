@@ -13,7 +13,7 @@ import { UserModule } from './user/user.module';
       synchronize: true,
       entities: ["dist/**/*.entity{.ts,.js}"],
     }),
-    UserModule    
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
