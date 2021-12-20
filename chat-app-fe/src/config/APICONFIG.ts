@@ -1,9 +1,11 @@
 // BASE ROUTE FOR THE API
 const API_CONFIG_ROUTE = "http://localhost:5050";
 const USER_ROUTE = "user";
+const AUTH_ROUTE = "auth";
 const API_CONFIG = {
     API_CONFIG_ROUTE,
-    USER_CONFIG_ROUTE: `${API_CONFIG_ROUTE}/${USER_ROUTE}`
+    USER_CONFIG_ROUTE: `${API_CONFIG_ROUTE}/${USER_ROUTE}`,
+    AUTH_CONFIG_ROUTE: `${API_CONFIG_ROUTE}/${AUTH_ROUTE}`
 }
 
 export default API_CONFIG;

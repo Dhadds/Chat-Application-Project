@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import authStateReducer from './features/Auth';
 import feedbackReducer from './features/Feedback/FeedbackState';
 import createAccountFormReducer from './features/Forms/createAccountForm';
+import loginFormReducer from './features/Forms/loginForm';
 export const store = configureStore({
   reducer: {
     authStateReducer,
     feedbackReducer,
     createAccountFormReducer,
+    loginFormReducer,
   },
 });
 

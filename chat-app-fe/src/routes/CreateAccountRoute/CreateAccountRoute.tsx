@@ -6,6 +6,7 @@ import UserDetailsLayout from '../../components/Layouts/UserDetailsLayout';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { createAccountThunk } from '../../app/Store/features/Forms/createAccountForm';
+import { generateFormikArgs } from '../../utils/formikUtils';
 interface FormState {
     email: string,
     firstName: string,
@@ -48,16 +49,6 @@ const CreateAccountRoute: React.FC = () => {
         onSubmit: handleSubmit,
         validationSchema,
     })
-
-    const generateFormikArgs = (key: keyof FormState) => {
-        return {
-            error: formik.touched[key] && Boolean(formik.errors[key]),
-            helperText: formik.touched[key] && formik.errors[key],
-            onChange: formik.handleChange,
-            value: formik.values[key],
-            name: key,
-        } as TextFieldProps
-    }
     
     return (
         <UserDetailsLayout>
@@ -86,7 +77,7 @@ const CreateAccountRoute: React.FC = () => {
                                 variant="outlined"
                                 fullWidth
                                 label="Email"
-                                {...generateFormikArgs('email')}
+                                {...generateFormikArgs('email', formik)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -94,7 +85,7 @@ const CreateAccountRoute: React.FC = () => {
                                 variant="outlined"
                                 fullWidth
                                 label="First Name"
-                                {...generateFormikArgs('firstName')}
+                                {...generateFormikArgs('firstName', formik)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -102,7 +93,7 @@ const CreateAccountRoute: React.FC = () => {
                                 variant="outlined"
                                 fullWidth
                                 label="Last Name"
-                                {...generateFormikArgs('lastName')}
+                                {...generateFormikArgs('lastName', formik)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -110,7 +101,7 @@ const CreateAccountRoute: React.FC = () => {
                                 variant="outlined"
                                 fullWidth
                                 label="Password"
-                                {...generateFormikArgs('password')}
+                                {...generateFormikArgs('password', formik)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -118,7 +109,7 @@ const CreateAccountRoute: React.FC = () => {
                                 variant="outlined"
                                 fullWidth
                                 label="Confirm Password"
-                                {...generateFormikArgs('confirmPassword')}
+                                {...generateFormikArgs('confirmPassword', formik)}
                             />
                         </Grid>
                     </Grid>

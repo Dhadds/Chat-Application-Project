@@ -8,7 +8,12 @@ const SubmissionBackdrop: React.FC = () => {
     const open = useSelector((state: RootState) => state.feedbackReducer.submissionBackdrop)
 
     return (
-        <Backdrop open={open}>
+        <Backdrop
+            style={{
+                zIndex: 10000,
+            }} 
+            open={open}
+        >
             <CircularProgress />
         </Backdrop>
     )

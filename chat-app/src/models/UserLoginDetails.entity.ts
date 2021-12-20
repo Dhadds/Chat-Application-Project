@@ -9,7 +9,4 @@ export class UserLoginDetails {
 
     @Column()
     password: string;
-
-    @OneToOne(type => User) @JoinColumn()
-    user: User;
 }
